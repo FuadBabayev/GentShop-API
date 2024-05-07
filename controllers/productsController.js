@@ -78,7 +78,7 @@ exports.getProductsController = async (req, res) => {
 
     // Pagination
     const page = parseInt(req.query.page) ? parseInt(req.query.page) : 1;
-    const limit = parseInt(req.query.limit) ? parseInt(req.query.limit) : 10;
+    const limit = parseInt(req.query.limit) ? parseInt(req.query.limit) : 100;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
     const total = await Product.countDocuments();
